@@ -98,6 +98,91 @@ const heroHighlights = [
   "Built-in SEO, analytics, and email automations",
 ];
 
+const pricingTiers = [
+  {
+    name: "Starter",
+    price: "$9",
+    priceSuffix: "/ month",
+    tagline: "solo entrepreneurs, creators, and small businesses launching their first store.",
+    includesHeading: "Includes:",
+    features: [
+      "1 Online Store (Cartiq-hosted)",
+      "Up to 25 products",
+      "1 Staff Account",
+      "1GB media storage",
+      "Basic Checkout + Stripe or PayPal Integration",
+      "Basic Themes (Prebuilt templates)",
+      "Cartiq Analytics Lite (traffic + order stats)",
+      "Email support",
+    ],
+    goal: "entry-level access to the Cartiq ecosystem with low friction onboarding.",
+    ctaLabel: "Start Starter plan",
+    ctaHref: "#",
+    ctaVariant: "primary",
+  },
+  {
+    name: "Growth",
+    price: "$29",
+    priceSuffix: "/ month",
+    tagline: "growing brands ready to scale their catalog and marketing.",
+    includesHeading: "Everything in Starter, plus:",
+    features: [
+      "Up to 250 products",
+      "3 Staff Accounts",
+      "Custom Domain Support",
+      "Abandoned Cart Recovery",
+      "Discount Codes & Gift Cards",
+      "Built-in Blog + SEO Tools",
+      "Cartiq Wallet Integration (optional upsell)",
+      "Priority Chat Support",
+    ],
+    goal: "support serious sellers expanding their reach and needing automation.",
+    ctaLabel: "Upgrade to Growth",
+    ctaHref: "#",
+    ctaVariant: "primary",
+    highlight: true,
+  },
+  {
+    name: "Pro",
+    price: "$79",
+    priceSuffix: "/ month",
+    tagline: "established e-commerce brands and agencies.",
+    includesHeading: "Everything in Growth, plus:",
+    features: [
+      "Unlimited products",
+      "10 Staff Accounts",
+      "Advanced Analytics + Reports",
+      "Cartiq API & Developer Access",
+      "Custom Checkout Styling",
+      "Multi-Currency & Multi-Language Support",
+      "Integrations (Klaviyo, Shippo, Printful, etc.)",
+      "Dedicated Account Manager",
+    ],
+    goal: "give power users control and extensibility.",
+    ctaLabel: "Explore Pro",
+    ctaHref: "#",
+    ctaVariant: "secondary",
+  },
+  {
+    name: "Enterprise",
+    price: "Custom pricing",
+    tagline: "large-scale operations or SaaS resellers.",
+    includesHeading: "Everything in Pro, plus:",
+    features: [
+      "White-label & Multi-store Management",
+      "API Rate Limits Lifted",
+      "SSO & Custom Integrations",
+      "SLA-backed 99.9% Uptime Guarantee",
+      "Dedicated Infrastructure Region (optional)",
+      "Onboarding & Migration Assistance",
+    ],
+    goal: "attract enterprise clients, agencies, and global brands.",
+    ctaLabel: "Talk to sales",
+    ctaHref: "#",
+    ctaVariant: "outline",
+  },
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -222,15 +307,15 @@ export default function App() {
                 An ecommerce platform that grows with your ambition.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-textSecondary">
-                Cartiq gives you the tools to launch a polished storefront, automate operations, and sell anywhere for just
-                <span className="font-semibold text-textPrimary"> $9 per month</span>. No bloated plugins. No hidden fees.
+                Cartiq gives you the tools to launch a polished storefront, automate operations, and sell anywhere with plans
+                starting at <span className="font-semibold text-textPrimary">$9 per month</span>. No bloated plugins. No hidden fees.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   className="inline-flex items-center justify-center rounded-full border border-transparent bg-gradient-to-br from-primary to-[#09E2D4] px-6 py-3 text-sm font-semibold text-[#001112] shadow-[0_20px_40px_rgba(0,196,179,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(0,196,179,0.45)]"
                   href="#pricing"
                 >
-                  Start building for $9
+                  Explore pricing tiers
                 </a>
                 <a
                   className="inline-flex items-center justify-center rounded-full border border-accent/40 bg-accent/20 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-accent/30"
@@ -362,61 +447,68 @@ export default function App() {
           <div className="container-shell">
             <SectionHeader
               eyebrow="Simple pricing"
-              title="Everything Cartiq offers for just $9 per month."
-              description="No contracts. No extra fees for payments or bandwidth. Upgrade only when you outgrow your team."
+              title="Flexible plans for every stage of your business."
+              description="Start with Starter for $9 per month and unlock advanced commerce tooling as you scale. No hidden fees or surprise add-ons."
             />
-            <div className="grid gap-6 md:grid-cols-2">
-              <article className="rounded-[28px] border border-white/10 bg-white/5 p-10 shadow-depth">
-                <span className="inline-flex rounded-full bg-primary/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                  Launch
-                </span>
-                <h3 className="mt-6 text-3xl font-semibold text-white">
-                  $9 <span className="text-base font-medium text-textSecondary">/ month</span>
-                </h3>
-                <p className="mt-3 text-sm text-textSecondary">
-                  Full access to everything Cartiq offers. Cancel anytime.
-                </p>
-                <ul className="mt-6 space-y-3 text-sm text-textSecondary">
-                  {["Unlimited products and variants", "Drag-and-drop storefront editor", "Abandoned cart recovery", "Built-in email and SMS campaigns", "Live analytics dashboard", "24/7 support and onboarding concierge"].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <span className="inline-flex h-5 w-5 items-center justify-center rounded-md border border-success/40 bg-success/20" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-transparent bg-gradient-to-br from-primary to-[#09E2D4] px-6 py-3 text-sm font-semibold text-[#001112] shadow-[0_20px_40px_rgba(0,196,179,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(0,196,179,0.45)]"
-                  href="#"
-                >
-                  Start 14-day free trial
-                </a>
-                <p className="mt-4 text-xs text-textSecondary">Switch to annual and save 20%.</p>
-              </article>
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {pricingTiers.map((tier) => {
+                const isHighlighted = tier.highlight;
 
-              <article className="rounded-[28px] border border-accent/30 bg-accent/10 p-10 shadow-soft">
-                <span className="inline-flex rounded-full bg-accent/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
-                  Scale
-                </span>
-                <h3 className="mt-6 text-3xl font-semibold text-white">Let's talk</h3>
-                <p className="mt-3 text-sm text-textSecondary">
-                  For high-volume brands that need advanced orchestration and APIs.
-                </p>
-                <ul className="mt-6 space-y-3 text-sm text-textSecondary">
-                  {["Wholesale channel control", "Headless storefront engine", "Priority fulfillment routing", "Dedicated success manager"].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <span className="inline-flex h-5 w-5 items-center justify-center rounded-md border border-white/20 bg-white/10" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-accent/40 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent/20"
-                  href="#"
-                >
-                  Book a strategy session
-                </a>
-                <p className="mt-4 text-xs text-textSecondary">Custom integrations and SLAs available.</p>
-              </article>
+                const buttonClasses = classNames(
+                  "inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition",
+                  tier.ctaVariant === "primary"
+                    ? "border border-transparent bg-gradient-to-br from-primary to-[#09E2D4] text-[#001112] shadow-[0_20px_40px_rgba(0,196,179,0.3)] hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(0,196,179,0.45)]"
+                    : tier.ctaVariant === "secondary"
+                    ? "border border-white/10 bg-white/10 text-white hover:-translate-y-0.5 hover:bg-white/20"
+                    : "border border-white/20 bg-transparent text-white hover:-translate-y-0.5 hover:bg-white/10"
+                );
+
+                return (
+                  <article
+                    key={tier.name}
+                    className={classNames(
+                      "rounded-[28px] border p-10 shadow-soft transition hover:-translate-y-1",
+                      isHighlighted ? "border-accent/40 bg-accent/10 shadow-glow" : "border-white/10 bg-white/5"
+                    )}
+                  >
+                    <span
+                      className={classNames(
+                        "inline-flex rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em]",
+                        isHighlighted ? "bg-accent/20 text-white" : "bg-primary/15 text-primary"
+                      )}
+                    >
+                      {tier.name}
+                    </span>
+                    <h3 className="mt-6 text-3xl font-semibold text-white">
+                      {tier.price}
+                      {tier.priceSuffix ? <span className="text-base font-medium text-textSecondary">{` ${tier.priceSuffix}`}</span> : null}
+                    </h3>
+                    <p className="mt-3 text-sm text-textSecondary">
+                      <span className="font-semibold text-white">Perfect for:</span> {tier.tagline}
+                    </p>
+                    <p className="mt-6 text-xs font-semibold text-textSecondary">{tier.includesHeading}</p>
+                    <ul className="mt-3 space-y-3 text-sm text-textSecondary">
+                      {tier.features.map((item) => (
+                        <li key={item} className="flex items-center gap-3">
+                          <span
+                            className={classNames(
+                              "inline-flex h-5 w-5 items-center justify-center rounded-md border",
+                              isHighlighted ? "border-white/30 bg-white/10" : "border-success/40 bg-success/20"
+                            )}
+                          />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-5 text-xs text-textSecondary">
+                      <span className="font-semibold text-white">Goal:</span> {tier.goal}
+                    </p>
+                    <a className={classNames("mt-8", buttonClasses)} href={tier.ctaHref}>
+                      {tier.ctaLabel}
+                    </a>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </Section>
@@ -499,7 +591,7 @@ export default function App() {
                   className="inline-flex items-center justify-center rounded-full border border-transparent bg-gradient-to-br from-primary to-[#09E2D4] px-6 py-3 text-sm font-semibold text-[#001112] shadow-[0_20px_40px_rgba(0,196,179,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(0,196,179,0.45)]"
                   href="#"
                 >
-                  Start for $9
+                  Compare plans
                 </a>
                 <a
                   className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/15"
